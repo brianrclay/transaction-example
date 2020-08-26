@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Code Example</title>
+  <link href="./reset.css" rel="stylesheet">
+  <link href="./styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <section class="transaction-wrapper">
+    <div class="transaction-inner">
+      <div class="code-wrapper">
+        <div class="code-editor request">
+          <div class="code-header">
+            <div class="file-name">
+              <span>Example transaction request:</span>
+            </div>
+            <div class="right">
+              <div class="action run">
+                <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"
+                  viewBox="0 0 16 16">
+                  <path fill="currentColor" fill-rule="evenodd"
+                    d="M8 0a8 8 0 110 16A8 8 0 018 0zm0 1.067a6.933 6.933 0 100 13.866A6.933 6.933 0 008 1.067zM6.21 4.569l5.076 3.063a.426.426 0 010 .738L6.21 11.433c-.307.185-.709-.024-.709-.37V4.938c0-.345.402-.554.71-.369zm.213 1.166v4.531l3.756-2.265-3.756-2.266z"
+                    clip-rule="evenodd" />
+                </svg>
+                <svg class="loader" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                  style="margin: auto; background: none; shape-rendering: auto;" width="16px" height="16px"
+                  viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+                  <circle cx="50" cy="50" fill="none" stroke="#ffffff" stroke-width="10" r="32"
+                    stroke-dasharray="150.79644737231007 52.26548245743669">
+                    <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s"
+                      values="0 50 50;360 50 50" keyTimes="0;1"></animateTransform>
+                  </circle>
+                </svg>
+                <span>RUN</span>
+              </div>
+            </div>
+          </div>
+          <div class="code-body">
+            <ol>
+              <li>
+                curl -i -X POST
+                https://int-data.moneydesktop.com/accounts/ACT-7afe2e36-2217-e183-bc27-91e42c7adf74/transactions
+                <span class="purple">\</span>
+              </li>
+              <li class="indent one">
+                -d <span class="yellow">'{"transaction":{"date":"2017-06-20","description":"Best
+                  Buy","amount":300,"transaction_type":1}}'</span> <span class="purple">\</span>
+              </li>
+              <li class="indent one">
+                -H <span class="yellow">'MD-SESSION-TOKEN:
+                  CWforZl1Vn2vC_v6H4rnQRT1DoWpDouJAV-_5TBmiQRAtA8rsOG_BoajTiOSsL0A3bd-bmHXlA-eQzc9ywItKg'</span>
+                <span class="purple">\</span>
+              </li>
+              <li class="indent one">
+                -H <span class="yellow">'Content-Type: application/vnd.mx.nexus.v1+json'</span>
+              </li>
+              <li class="indent one">
+                -H <span class="yellow">'Accept: application/vnd.mx.nexus.v1+json'</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="code-editor response">
+          <div class="code-header">
+            <div class="file-name">
+              <span>Example response:</span>
+            </div>
+          </div>
+          <div class="code-body">
+            <ol>
+              <li>
+                {
+              </li>
+              <li class="indent one">
+                <span class="yellow">"transaction"</span>: {
+              </li>
+              <li class="indent two">
+                <span class="yellow">"account_guid"</span>: <span
+                  class="yellow">"ACT-7afe2e36-2217-e183-bc27-91e42c7adf74"</span>,
+              </li>
+              <li class="indent two">
+                <span class="yellow">"amount"</span>: <span class="purple">300</span>,
+              </li>
+              <li class="indent two">
+                <span class="yellow">"amount_set_by"</span>: <span class="purple">2</span>,
+              </li>
+              <li class="indent two">
+                <span class="yellow">"amount_set_by_name"</span>: <span class="yellow">"USER"</span>,
+              </li>
+              <li class="indent two">
+                <span class="yellow">"category_guid"</span>: <span
+                  class="yellow">"CAT-d7851c65-3353-e490-1953-fb9235e681e4"</span>,
+              </li>
+              <li class="indent two">
+                <span class="yellow">"category_name"</span>: <span class="yellow">"Travel"</span>,
+              </li>
+              <li class="indent two">
+                <span class="yellow">"category_set_by"</span>: <span class="purple">2</span>,
+              </li>
+              <li class="indent two">
+                <span class="yellow">"category_set_by_name"</span>: <span class="yellow">"USER"</span>,
+              </li>
+              <li class="indent two">
+                <span class="yellow">"created_at"</span>: <span class="yellow">"2017-09-07T15:37:16-06:00"</span>,
+              </li>
+              <li class="indent two">
+                <span class="yellow">"currency_code"</span>: <span class="yellow">"USD"</span>,
+              </li>
+              <li class="indent two">
+                <span class="yellow">"date"</span>: <span class="yellow">"2017-06-20"</span>,
+              </li>
+              <li class="indent two">
+                <span class="yellow">"description"</span>: <span class="yellow">"Expedia"</span>,
+              </li>
+              <li class="indent two">
+                <span class="yellow">"has_been_split"</span>: <span class="light-blue">false</span>,
+              </li>
+              <li class="indent two">
+                <span class="yellow">"is_flagged"</span>: <span class="light-blue">false</span>,
+              </li>
+              <li class="indent two">
+                <span class="yellow">"is_bill_pay"</span>: <span class="light-blue">false</span>,
+              </li>
+              <li class="indent two">
+                <span class="yellow">"is_income"</span>: <span class="light-blue">false</span>,
+              </li>
+              <li class="indent two">
+                <span class="yellow">"is_overdraft_fee"</span>: <span class="light-blue">false</span>,
+              </li>
+              <li class="indent two">
+                <span class="yellow">"is_subscription"</span>: <span class="light-blue">false</span>,
+              </li>
+              <li class="indent two">
+                <span class="yellow">"latitude"</span>: <span class="purple">40.429628</span>,
+              </li>
+              <li class="indent two">
+                <span class="yellow">"longitude"</span>: <span class="purple">-111.892230</span>,
+              </li>
+              <li class="indent two">
+                <span class="yellow">"updated_at"</span>: <span class="yellow">"2017-09-07T15:37:16-06:00"</span>,
+              </li>
+              <li class="indent two">
+                <span class="yellow">"user_guid"</span>: <span
+                  class="yellow">"USR-298c53aa-e191-bd7a-45ce-9dd561e9ecea"</span>
+              </li>
+              <li class="indent one">
+                }
+              </li>
+              <li>
+                }
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="text-wrapper">
+        <h2 class="h1">Make API Management <span>Easy</span> </h2>
+        <p>Access the full range of MX products through a single API designed to make management easier and developers happier. Get access to test keys in seconds, and start working your way through our clean documentation instantly. Once you’re live, connection statuses, metrics, and developer logs will give you visibility into performance, taking the guesswork out of troubleshooting.</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+
+  <script src="./main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,340 @@
+@font-face {
+  font-family: 'Proxima Nova';
+  font-weight: 300;
+  src: url(/fonts/ProximaNova-Thin.otf);
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-weight: 400;
+  src: url(/fonts/ProximaNova-Reg.otf);
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-weight: 700;
+  src: url(/fonts/ProximaNova-Sbold.otf);
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-weight: 900;
+  src: url(/fonts/ProximaNova-Bold.otf);
+}
+
+.transaction-wrapper {
+  padding: 60px 0;
+  font-family: 'Proxima Nova', sans-serif;
+  font-weight: 400;
+}
+
+.transaction-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-transition: all 350ms cubic-bezier(0.475, 0.425, 0, 0.995);
+  transition: all 350ms cubic-bezier(0.475, 0.425, 0, 0.995);
+}
+
+@media (max-width: 1220px) {
+  .transaction-inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 0 50px;
+  }
+}
+
+@media (max-width: 1220px) {
+  .transaction-inner {
+    padding: 0 20px;
+  }
+}
+
+.transaction-inner .code-wrapper {
+  width: 50%;
+  padding: 0 30px;
+}
+
+@media (max-width: 1220px) {
+  .transaction-inner .code-wrapper {
+    width: 100%;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.transaction-inner .code-wrapper .code-editor {
+  width: 100%;
+  border-radius: 0;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 3px 8px rgba(87, 102, 117, 0.15);
+          box-shadow: 0px 3px 8px rgba(87, 102, 117, 0.15);
+  -webkit-transition: all 350ms cubic-bezier(0.475, 0.425, 0, 0.995);
+  transition: all 350ms cubic-bezier(0.475, 0.425, 0, 0.995);
+}
+
+@media (max-width: 1220px) {
+  .transaction-inner .code-wrapper .code-editor {
+    max-width: 650px;
+  }
+}
+
+.transaction-inner .code-wrapper .code-editor.response {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  pointer-events: none;
+}
+
+.transaction-inner .code-wrapper .code-editor .code-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 16px;
+  background-color: #49505A;
+  font-family: 'Proxima Nova';
+  font-weight: 400;
+  color: #fff;
+}
+
+.transaction-inner .code-wrapper .code-editor .code-header .file-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.transaction-inner .code-wrapper .code-editor .code-header .file-name svg {
+  margin-right: 8px;
+}
+
+.transaction-inner .code-wrapper .code-editor .code-header .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.transaction-inner .code-wrapper .code-editor .code-header .right .action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 14px;
+  line-height: 16px;
+  -webkit-transition: all 350ms cubic-bezier(0.475, 0.425, 0, 0.995);
+  transition: all 350ms cubic-bezier(0.475, 0.425, 0, 0.995);
+  cursor: pointer;
+  margin-right: 24px;
+  padding: 8px 12px;
+  border-radius: 0;
+  background: #2F73DA;
+  font-weight: 900;
+}
+
+.transaction-inner .code-wrapper .code-editor .code-header .right .action:last-of-type {
+  margin: 0;
+}
+
+.transaction-inner .code-wrapper .code-editor .code-header .right .action:hover {
+  background-color: #165ECC;
+}
+
+.transaction-inner .code-wrapper .code-editor .code-header .right .action.disabled {
+  color: #A8B1BD;
+  pointer-events: none;
+}
+
+.transaction-inner .code-wrapper .code-editor .code-header .right .action span {
+  margin-left: 8px;
+}
+
+.transaction-inner .code-wrapper .code-editor .code-header .right .action .loader {
+  display: none;
+}
+
+.transaction-inner .code-wrapper .code-editor .code-body {
+  padding: 16px 24px;
+  background-color: #1F2329;
+  color: #ffffff;
+  position: relative;
+  -webkit-transition: height 600ms cubic-bezier(0.475, 0.425, 0, 0.995);
+  transition: height 600ms cubic-bezier(0.475, 0.425, 0, 0.995);
+  overflow: auto;
+}
+
+@media (max-width: 1220px) {
+  .transaction-inner .code-wrapper .code-editor .code-body {
+    max-height: 500px;
+  }
+}
+
+.transaction-inner .code-wrapper .code-editor .code-body ol {
+  list-style: none;
+  counter-reset: li;
+  margin: 0;
+}
+
+.transaction-inner .code-wrapper .code-editor .code-body ol li {
+  font-family: Menlo, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  counter-increment: li;
+  margin-bottom: 4px;
+  position: relative;
+  padding-left: 32px;
+  -webkit-transition: all 350ms cubic-bezier(0.475, 0.425, 0, 0.995);
+  transition: all 350ms cubic-bezier(0.475, 0.425, 0, 0.995);
+}
+
+.transaction-inner .code-wrapper .code-editor .code-body ol li::before {
+  content: counter(li);
+  color: #A8B1BD;
+  position: absolute;
+  left: 0;
+  text-align: right;
+  width: 1em;
+}
+
+.transaction-inner .code-wrapper .code-editor .code-body ol li.indent.one {
+  padding-left: 48px;
+}
+
+.transaction-inner .code-wrapper .code-editor .code-body ol li.indent.two {
+  padding-left: 64px;
+}
+
+.transaction-inner .code-wrapper .code-editor .code-body ol li.indent.three {
+  padding-left: 80px;
+}
+
+.transaction-inner .code-wrapper .code-editor .code-body ol li.indent.four {
+  padding-left: 96px;
+}
+
+.transaction-inner .code-wrapper .code-editor .code-body ol .comment {
+  color: #689754;
+}
+
+.transaction-inner .code-wrapper .code-editor .code-body ol .light-blue {
+  color: #94D0F0;
+}
+
+.transaction-inner .code-wrapper .code-editor .code-body ol .dark-blue {
+  color: #578EBC;
+}
+
+.transaction-inner .code-wrapper .code-editor .code-body ol .tan {
+  color: #C18971;
+}
+
+.transaction-inner .code-wrapper .code-editor .code-body ol .yellow {
+  color: #CDCD9F;
+}
+
+.transaction-inner .code-wrapper .code-editor .code-body ol .teal {
+  color: #4EC8AF;
+}
+
+.transaction-inner .code-wrapper .code-editor .code-body ol .purple {
+  color: #A97AA5;
+}
+
+.transaction-inner .code-wrapper .code-editor .code-body .request.hide {
+  display: none;
+}
+
+.transaction-inner .text-wrapper {
+  width: 50%;
+  padding: 30px 30px 0;
+}
+
+@media (max-width: 1220px) {
+  .transaction-inner .text-wrapper {
+    width: 100%;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.transaction-inner .text-wrapper h2 {
+  margin-bottom: 16px;
+  font-weight: 200;
+  font-size: 34px;
+}
+
+@media (max-width: 1220px) {
+  .transaction-inner .text-wrapper h2 {
+    max-width: 650px;
+    text-align: center;
+  }
+}
+
+.transaction-inner .text-wrapper h2 span {
+  font-weight: 900;
+}
+
+.transaction-inner .text-wrapper p {
+  color: #262626;
+  line-height: 24px;
+}
+
+@media (max-width: 1220px) {
+  .transaction-inner .text-wrapper p {
+    margin-bottom: 40px;
+    max-width: 650px;
+    text-align: center;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
