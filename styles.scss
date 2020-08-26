@@ -86,6 +86,12 @@ $spacing-96px: 96px;
   src: url(/fonts/ProximaNova-Bold.otf);
 }
 
+@font-face {
+  font-family: 'Menlo';
+  font-weight: 400;
+  src: url(/fonts/Menlo-Regular.ttf);
+}
+
 .transaction-wrapper {
   padding: 60px 0;
   font-family: 'Proxima Nova', sans-serif;
@@ -225,7 +231,7 @@ $spacing-96px: 96px;
           margin: 0;
 
           li {
-            font-family: Menlo, Arial, Helvetica, sans-serif;
+            font-family: Menlo, monospace;
             font-size: 14px;
             line-height: 20px;
             counter-increment: li;
